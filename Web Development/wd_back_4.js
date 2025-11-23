@@ -7,7 +7,7 @@ FRONTEND DOES NOT NEED TO DO QUIZ 4, BUT QUIZ 5 INSTEAD.
 Instructions:
 1. Fill in your name or email in the variable below.
 2. Complete the coding tasks.
-3. Run `node techlabs_checker.js 3 your_email_here` to verify and get your key.
+3. Run `node wd_checker.js 3 your_email_here` to verify and get your key.
 */
 
 const name = "your_email_here";

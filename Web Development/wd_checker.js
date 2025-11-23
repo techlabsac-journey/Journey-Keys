@@ -3,9 +3,9 @@ TechLabs Aachen — Universal JS Checker
 For Web Development Quizzes (1-5)
 ---------------------------------------------------------
 Usage:
-node techlabs_checker.js <quiz_id> <your_name_or_email>
+node wd_checker.js <quiz_id> <your_name_or_email>
 Example:
-node techlabs_checker.js 1 alice@example.com
+node wd_checker.js 1 alice@example.com
 */
 
 import crypto from "crypto";
