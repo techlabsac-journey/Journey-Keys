@@ -134,7 +134,7 @@ async function main() {
   const quizId = parseInt(args[0]);
   const name = args[1];
 
-  const quizFile = path.join(__dirname, `web_quiz${quizId - 200}.js`);
+  const quizFile = path.join(__dirname, `wd_key${quizId}.js`);
   if (!fs.existsSync(quizFile)) {
     console.log(`Quiz file not found: ${quizFile}`);
     process.exit(1);
