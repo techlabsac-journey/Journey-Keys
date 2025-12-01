@@ -127,23 +127,29 @@ function generateKey(name, quizId, score, total) {
 async function main() {
   const args = process.argv.slice(2);
   if (args.length < 2) {
-    console.log("Usage: node techlabs_checker.js <quiz_id> <name_or_email>");
+    console.log("Usage: node wd_checker.js <quiz_id> <name_or_email>");
+    console.log("Example: node wd_checker.js 1 alice@example.com");
     process.exit(1);
   }
 
   const quizId = parseInt(args[0]);
   const name = args[1];
 
-  const quizFile = path.join(__dirname, `web_quiz${quizId - 200}.js`);
+  // FIXED: Correct file path construction
+  const quizFile = path.join(__dirname, `wd_key${quizId}.js`);
+  
   if (!fs.existsSync(quizFile)) {
-    console.log(`Quiz file not found: ${quizFile}`);
+    console.log(`❌ Quiz file not found: ${quizFile}`);
+    console.log(`Make sure the file wd_key${quizId}.js exists in the same directory.`);
     process.exit(1);
   }
 
   const mod = await import(path.resolve(quizFile));
   const checker = QUIZ_FUNCTIONS[quizId];
+  
   if (!checker) {
-    console.log("Unknown quiz ID");
+    console.log(`❌ Unknown quiz ID: ${quizId}`);
+    console.log("Valid quiz IDs are: 1, 2, 3, 4, 5");
     process.exit(1);
   }
 

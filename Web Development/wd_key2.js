@@ -8,34 +8,32 @@ Instructions:
 3. Run `node wd_checker.js 2 your_email_here` to verify and get your key.
 */
 
-const name = "your_email_here";
+export const name = "your_email_here";
 
 // === TASK 1 ===
 // Return the sum of ASCII codes of all letters in your name.
-function sumASCII(name) {
+export function sumASCII(name) {
     // TODO
     return 0;
 }
 
 // === TASK 2 ===
 // Return an array of characters in your name, reversed.
-function reverseName(name) {
+export function reverseName(name) {
     // TODO
     return [];
 }
 
 // === TASK 3 ===
 // Create an object {name: <your_name>, length: <len>, isEven: <bool>}
-function createUserObject(name) {
+export function createUserObject(name) {
     // TODO
     return {};
 }
 
 // === TASK 4 ===
 // Return a sentence "My name has X letters" where X = name.length
-function describeName(name) {
+export function describeName(name) {
     // TODO
     return "";
 }
-
-module.exports = { name, sumASCII, reverseName, createUserObject, describeName };

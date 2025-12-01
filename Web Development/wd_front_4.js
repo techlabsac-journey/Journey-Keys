@@ -1,8 +1,9 @@
 /*
-WEB DEVELOPMENT QUIZ 5 — React
+WEB DEVELOPMENT QUIZ 5 — REACT FRONTEND SPECIALIZATION
 TechLabs Aachen | Digital Shaper Program
 ---------------------------------------------------------
-BACKEND DOES NOT NEED TO DO QUIZ 5, BUT QUIZ 4 INSTEAD.
+BACKEND TRACK STUDENTS DO NOT NEED TO DO QUIZ 5, BUT QUIZ 4 INSTEAD.
+FRONTEND TRACK STUDENTS COMPLETE THIS QUIZ.
 
 Instructions:
 1. Fill in your name or email in the variable below.
