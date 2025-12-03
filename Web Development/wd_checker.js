@@ -9,7 +9,7 @@ node wd_checker.js 1 alice@example.com
 */
 
 import crypto from "crypto";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import path from "path";
 import fs from "fs";
 
@@ -144,7 +144,7 @@ async function main() {
     process.exit(1);
   }
 
-  const mod = await import(path.resolve(quizFile));
+  const mod = await import(pathToFileURL(path.resolve(quizFile)).href);
   const checker = QUIZ_FUNCTIONS[quizId];
   
   if (!checker) {
