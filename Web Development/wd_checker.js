@@ -135,12 +135,34 @@ async function main() {
   const quizId = parseInt(args[0]);
   const name = args[1];
 
-  // FIXED: Correct file path construction
-  const quizFile = path.join(__dirname, `wd_key${quizId}.js`);
+  // FIXED: Correct file path construction with backward compatibility
+  // Support both new naming (wd_key4.js, wd_key5.js) and legacy naming (wd_back_4.js, wd_front_4.js)
+  let quizFile = path.join(__dirname, `wd_key${quizId}.js`);
+  
+  // Check if file exists, if not try legacy naming for quiz 4 and 5
+  if (!fs.existsSync(quizFile)) {
+    if (quizId === 4) {
+      const legacyFile = path.join(__dirname, "wd_back_4.js");
+      if (fs.existsSync(legacyFile)) {
+        quizFile = legacyFile;
+      }
+    } else if (quizId === 5) {
+      const legacyFile = path.join(__dirname, "wd_front_4.js");
+      if (fs.existsSync(legacyFile)) {
+        quizFile = legacyFile;
+      }
+    }
+  }
   
   if (!fs.existsSync(quizFile)) {
     console.log(`❌ Quiz file not found: ${quizFile}`);
-    console.log(`Make sure the file wd_key${quizId}.js exists in the same directory.`);
+    if (quizId === 4) {
+      console.log(`Make sure either wd_key4.js or wd_back_4.js exists in the same directory.`);
+    } else if (quizId === 5) {
+      console.log(`Make sure either wd_key5.js or wd_front_4.js exists in the same directory.`);
+    } else {
+      console.log(`Make sure the file wd_key${quizId}.js exists in the same directory.`);
+    }
     process.exit(1);
   }
 
